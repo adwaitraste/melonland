@@ -26,6 +26,7 @@ class GlobalSettings():
         self.mobsScore = 10
         self.completeScore = 25
         self.timePenalty = 2
+        self.dyingPenalty = 50
         self.startScreenMsg1 = self.title
         self.startScreenMsg2 = "Press Space to play"
         self.startScreenMsg3 = "Use arrow keys to move"

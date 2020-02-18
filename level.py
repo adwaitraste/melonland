@@ -187,6 +187,7 @@ class Level():
             for mobs in self.movingObstacles:
                 if p1.isCollided(mobs):
                     p1Playing = False
+                    p1.score -= gs.dyingPenalty
                     status = 0
                 mobs.checkOnEdge()
                 mobs.move()
@@ -195,6 +196,7 @@ class Level():
             for fobs in self.fixedObstacles:
                 if p1.isCollided(fobs):
                     p1Playing = False
+                    p1.score -= gs.dyingPenalty
                     status = 0
                 fobs.draw()
 
@@ -274,8 +276,8 @@ class Level():
             for mobs in self.movingObstacles:
                 if p2.isCollided(mobs):
                     p2Playing = False
-                    if(self.lvl != gs.noOfLvls):
-                        status = 0
+                    p2.score -= gs.dyingPenalty
+                    status = 0
                 mobs.checkOnEdge()
                 mobs.move()
                 mobs.draw()
@@ -283,8 +285,8 @@ class Level():
             for fobs in self.fixedObstacles:
                 if p2.isCollided(fobs):
                     p2Playing = False
-                    if(self.lvl != gs.noOfLvls):
-                        status = 0
+                    p2.score -= gs.dyingPenalty
+                    status = 0
                 fobs.draw()
 
             # Get score text
